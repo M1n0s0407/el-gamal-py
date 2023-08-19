@@ -11,7 +11,7 @@ def find_alpha(p):
     return None
 
 # Example usage
-p = 1000003
+p = 5311601
 alpha = find_alpha(p)
 
 if alpha is None:
