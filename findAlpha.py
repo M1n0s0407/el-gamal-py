@@ -1,20 +1,6 @@
-def is_primitive_element(alpha, p):
-    for i in range(1, p-1):
-        if pow(alpha, i, p) == 1:
-            return False
-    return True
+from sympy.ntheory import primitive_root
 
-def find_alpha(p):
-    for alpha in range(2, p):
-        if is_primitive_element(alpha, p):
-            return alpha
-    return None
+p = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000237
+primitive_element = primitive_root(p)
 
-# Example usage
-p = 5311601
-alpha = find_alpha(p)
-
-if alpha is None:
-    print("No primitive element (alpha) found for p =", p)
-else:
-    print("Primitive element (alpha) for p =", p, "is", alpha)
+print(f"The primitive element of {p} is {primitive_element}")
